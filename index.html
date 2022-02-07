@@ -1,13 +1,19 @@
+// The following code lets you know when the file was last modified.
+// This will help you know if you are looking at the new version of the file or if there is a delay on GitHub.
+       var docMod = document.lastModified;
+       alert("This file last modified  " + docMod);
+       console.log("This file last modified  " + docMod);
+// If you find the alert box annoying, comment out that line and timestamp will still show up in the debugging console
+//added code given to see when the app was last updated
+
 <!DOCTYPE html> 
 <html> 
 <!-- The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only.  Any user of this code does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.
  
-THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
- 
  
 Authors in chronological order of contribution:
-Author 1
-Author 2
+Niels Levy-Thiebaut
+<!-- changed author's name to mine-->
  
 Further Information:
 http://diystream.cns.utexas.edu/
@@ -25,7 +31,232 @@ blah, blah, blah, blah
 
    <head> 
       
-	   PUT YOUR OLD CODE IN HERE
+	<title>Hello World</title>  
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="w3.css">
+        <link rel="stylesheet" href="w3-colors-flat.css">
+   </head> 
+<!-- this sets up important background info for the app (including how it works on mobile devices) -->
+
+<script>
+        var gryffindor_count = 0;
+        var slytherin_count = 0;
+
+        function gryffindorAdd(){
+            gryffindor_count = gryffindor_count + 1;
+        }
+<!-- this calculates the number of responses that support that you are a Gryffindor -->
+        
+	function slytherinAdd(){
+            slytherin_count = slytherin_count + 1;
+        }
+<!-- this calculates the number of responses that support that you are a Slytherin -->
+
+	function getResults() {
+		var gryffindorPercent = (gryffindor_count/8)*100;
+		var slytherinPercent = (slytherin_count/8)*100;
+		
+		var resultText = document.getElementById("results");
+		resultText.innerHTML = "Probability that you are a Gryffindor =" + gryffindorPercent + "<br> Probability that you are a Slytherin =" + slytherinPercent;
+		
+		<html>
+    		<head>
+        		<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+        		<meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0;  user-scalable=0;" name="viewport">
+        		<link rel="stylesheet" href="../includes/style.css">
+    		</head>
+    		<body width = "device-width">
+        		<img class="test"  src="gryffindor.png">
+    		</body>
+		<!-- results function spits out probability that you are a Gryffindor or Slytherin and an image of the two houses' seal-->
+	}
+  </script>
+
+
+
+<style>	
+.body {
+     margin: 0em;
+}
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    overflow-y: auto;
+    z-index: 0;
+    background-color: hsl(0,0%,100%);
+}
+
+  .page:target {
+    left: 0vw;
+    z-index: 1;
+}
+</style>
+	
+<style>
+       	img, object{
+        max-height:90%;
+        	max-width:90%;
+        }
+</style>
+<!-- this sets up important style info for the app, including the resizeable image information -->
+
+<body>
+<div id="header" class="w3-container w3-flat-carrot">
+	<h1>Gryffindor or Slytherin?</h1>
+</div>
+<!-- changed header to the title of my app -->
+
+<div id="content" class="w3-container">
+	<p> Are you a Gryffindor or a Slytherin? Answer a few short questions to find out!</p>
+	<!--  corrected grammar -->
+	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
+	<!-- button takes user to the first question -->
+	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
+ 	<!-- took out the medical disclaimer since it's not applicable -->
+	</div>
+
+<div class="page" id="one">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 1</h1>
+	</div>
+	<!-- sets up header and  question number on first question page -->
+
+	<div id="content" class="w3-container">
+		<p> Someone is in imminent danger - what do you do?</p>
+		<!-- this is the first question itself -->
+
+		<a href="#two"  onclick="gryffindorAdd();" class="w3-btn w3-black"> Rescue them</a>
+									       	   
+		<a href="#two"  onclick="slytherinAdd();" class="w3-btn w3-black"> Leave them</a>
+		<!-- buttons take in user response and takes them to the next page -->
+	 </div><!-- added first question and the buttons for it -->
+
+</div>
+
+<div class="page" id="two">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 2</h1>
+	</div>
+	<!-- sets up header and  question number on second question page -->
+
+
+	<div id="content" class="w3-container">
+		<p>Which Harry Potter character would you rather be?</p>
+		<!-- second question itself -->
+
+		<a href="#three" onclick="gryffindorAdd();" class="w3-btn w3-black"> Harry!</a>
+		
+		<a href="#three"  onclick="slytherinAdd();" class="w3-btn w3-black"> Draco!</a>
+		<!-- buttons take in user response and takes them to the next page -->
+	</div> <!-- added second page, second question and the buttons for it -->
+</div>	
+
+<div class="page" id="three">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 3</h1>
+	</div>
+	<!-- sets up header and  question number on third question page -->
+
+	<div id="content" class="w3-container">
+		<p>Another student is crying in the hallway. What's your first reaction?</p>
+		<!-- third question itself -->
+
+		<a href="#four"  onclick="gryffindorAdd();" class="w3-btn w3-black"> Let's see if I can go help them...</a>
+		<a href="#four"  onclick="slytherinAdd();" class="w3-btn w3-black"> Let's see if I can make them more miserable...</a>
+		<!-- buttons take in user response and takes them to the next page -->
+	</div> <!-- added third page, third question and the buttons for it -->
+</div>	
+	
+<div class="page" id="four">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 4</h1>
+	</div>
+	<!-- sets up header and  question number on fourth question page -->
+
+	<div id="content" class="w3-container">
+		<p>What is your spirit animal?</p>
+		<!-- fourth question itself -->
+
+		<a href="#five"  onclick="gryffindorAdd();" class="w3-btn w3-black"> Lion</a>
+		<a href="#five"  onclick="slytherinAdd();" class="w3-btn w3-black"> Snake</a>
+		<!-- buttons take in user response and takes them to the next page -->
+	</div> <!-- added fourth page, fourth question and the buttons for it -->
+</div>	
+	
+<div class="page" id="five">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 5</h1>
+	</div>
+	<!-- sets up header and  question number on fifth question page -->
+
+	<div id="content" class="w3-container">
+		<p>How would you best describe yourself?</p>
+		<!-- fifth question itself -->
+
+		<a href="#six"  onclick="gryffindorAdd();" class="w3-btn w3-black"> Chivalrous</a>
+		<a href="#six"  onclick="slytherinAdd();" class="w3-btn w3-black"> Ambitious</a>
+		<!-- buttons take in user response and takes them to the next page -->
+	</div> <!-- added fifth page, fifth question and the buttons for it -->
+</div>	
+	
+<div class="page" id="six">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 6</h1>
+	</div>
+	<!-- sets up header and  question number on sixth question page -->
+
+	<div id="content" class="w3-container">
+		<p>Between these two words, how would you prefer to be described?</p>
+		<!-- sixth question itself -->
+
+		<a href="#seven"  onclick="gryffindorAdd();" class="w3-btn w3-black"> Daring</a>
+		<a href="#seven"  onclick="slytherinAdd();" class="w3-btn w3-black"> Cunning</a>
+		<!-- buttons take in user response and takes them to the next page -->
+	</div> <!-- added sixth page, sixth question and the buttons for it -->
+</div>	
+	
+<div class="page" id="seven">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 7</h1>
+	</div>
+	<!-- sets up header and  question number on seventh question page -->
+
+	<div id="content" class="w3-container">
+		<p>How would you feel if you received acceptance into Hogwarts?</p>
+		<!-- seventh question itself -->
+
+		<a href="#eight"  onclick="gryffindorAdd();" class="w3-btn w3-black"> Thrilled</a>
+		<a href="#eight"  onclick="slytherinAdd();" class="w3-btn w3-black"> Indifferent</a>
+		<!-- buttons take in user response and takes them to the next page -->
+	</div> <!-- added seventh page, seventh question and the buttons for it -->
+</div>	
+	
+	
+<div class="page" id="eight">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Click below for results</h1>
+		</div>
+			<!-- sets up the header that tells user to click on button for results -->
+
+	<div id="content" class="w3-container">
+		<p id="results"></p>
+		<a onclick="getResults();" class="w3-btn w3-black"> Results</a>
+		<!-- button gives you the results -->
+
+	</div> <!-- added a page that takes you to the results -->
+</div>	
+</div>	
+			  
+
+<footer class="w3-bottom w3-container w3-flat-carrot">
+	<p>DIY!</p>
+</footer>
+
 	   
    </body>
 </html>
